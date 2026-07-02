@@ -1,0 +1,44 @@
+seed: 2026
+qos_metric: rt
+matrix_density: 0.05
+data_dir: dataset/wsdream
+output_dir: outputs
+device: cuda
+
+split:
+  valid_min: 0.0
+
+mf:
+  latent_dim: 64
+  epochs: 300
+  lr: 0.01
+  lambda_reg: 1.0
+  eta_user: 0.001
+  eta_service: 0.001
+  early_stop_patience: 60
+  clip_min: 0.0
+  verbose: true
+
+reputation:
+  alpha: 0.6
+
+mae:
+  patch_size: 32
+  encoder_dim: 256
+  decoder_dim: 128
+  encoder_layers: 6
+  decoder_layers: 3
+  encoder_heads: 8
+  decoder_heads: 4
+  mlp_ratio: 4.0
+  dropout: 0.0
+  base_mask_rate: 0.75
+  beta: 0.5
+  gamma: 0.3
+  epochs: 300
+  lr: 0.0001
+  weight_decay: 0.05
+  grad_clip: 1.0
+  eval_every: 10
+  inference_samples: 5
+  verbose: true
