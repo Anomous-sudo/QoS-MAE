@@ -1,6 +1,6 @@
 # QoS-MAE
 
-QoS-MAE: A Masked Autoencoder with Reputation Modeling for Web Service QoS Prediction.
+QoS-MAE: A Masked Autoencoder with Reputation Modeling for Web Service QoS Prediction. We proposed a QoS prediction method based on masked autoencoders (QoS-MAE), which first applies a region-aware MF method to complete the QoS matrix and assigns a reputation score to each QoS observation, and then adopts a reputation-guided masking strategy that preferentially masks low-reputation observations and reconstructs them from contextual information. 
 
 ## Environment
 
@@ -9,16 +9,7 @@ pip install -r requirements.txt
 
 ## Parameters
 
-| Item | Response Time | Throughput |
-|---|---:|---:|
-| encoder dim `D` | 256 | 128 |
-| decoder dim `D'` | 128 | 64 |
-| encoder layers `Ne` | 6 | 6 |
-| decoder layers `Nd` | 3 | 3 |
-| mask rate `rho` | 0.75 | 0.75 |
-| `beta` | 0.5 | 0.5 |
-| `gamma` | 0.3 | 0.3 |
-| `alpha` | 0.6 | 0.6 |
+For QoS-MAE, the parameters are set to $N_e = 6$, $N_d = 3$, $\rho = 0.7$, $\beta = 0.5$, $\gamma = 0.3$, $p = 16$, $\lambda = 1$, $\eta_1 = 0.001$, and $\eta_2 = 0.001$. For the response time dataset, the parameters are set to \(D=256\), \(D'=128\), and \(\alpha=0.6\). For the throughput dataset, they are set to \(D=128\), \(D'=64\), and \(\alpha=0.4\).
 
 ## Config files:
 
